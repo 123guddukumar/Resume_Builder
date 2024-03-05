@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Resume</title>
+    <style>
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        ul li {
+            list-style-type: none;
+        }
+
+        .main {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 110vh;
+            /* for 2nd Section */
+            /* grid-template-rows: 955px 200px;  */
+        }
+
+        .section1 {
+            display: grid;
+            grid-template-rows: 130px 1fr;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp6412485.jpg&f=1&nofb=1&ipt=482236bb9131bffbe41532d840dbc43cdadf9f8ec2497a047eb342d460ac898e&ipo=images);
+            /* background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F2109972.jpg&f=1&nofb=1&ipt=227874bed3bbdb75e33b2fb7c69ad5c890b2910b88a4a58e255454f0ca689913&ipo=images); */
+            background-size: cover;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 1.5em;
+            width: 5.5em;
+            margin-left: 3%;
+            margin-top: 1em;
+            font-size: 2em;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            letter-spacing: .2em;
+            color: rgb(255, 255, 255);
+            border: solid cyan 4px;
+            border-bottom: -20em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        @keyframes popup {
+            from {
+                transform: translateY(100px);
+            }
+
+            to {
+                transform: translateY(0px);
+            }
+        }
+
+        .header .nav-btn {
+            margin-right: 30px;
+            margin-top: 30px;
+        }
+
+        .header .nav-btn ul {
+            display: flex;
+        }
+
+        .header .nav-btn ul li a {
+            margin-right: 2rem;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+            letter-spacing: 2px;
+            cursor: pointer;
+        }
+
+        .hero-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+        }
+
+        .hero-main .hero-contents {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 700px;
+            height: 700px;
+            margin-left: 80px;
+            margin-top: 30px;
+            animation-name: popup;
+            animation-duration: 2s;
+        }
+
+        .hero-img-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            width: 120px;
+            border: solid 4px cyan;
+        }
+
+        .brandName {
+            font-size: 100px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, cursive;
+            font-weight: 900;
+        }
+
+        .hero-text {
+            margin-top: -60px;
+            margin-bottom: 20px;
+        }
+
+
+        .header .nav-btn ul li:nth-child(4) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30px;
+            width: 100px;
+            padding: 5px;
+            margin-top: -12px;
+            margin-left: 20px;
+            border: solid 2px cyan;
+
+        }
+
+        .header .nav-btn ul li:nth-child(4) .acc {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: -30px;
+        }
+
+        .main-resume {
+            font-size: 4.4rem;
+            margin-top: 100px;
+            margin-left: 100px;
+        }
+
+        .main-heading {
+            font-size: 4rem;
+        }
+
+        .para {
+            font-size: 2rem;
+        }
+
+        .all-btn {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .btn {
+            background-color: #000056;
+            width: 15%;
+            margin-left: 120px;
+            margin-bottom: 120px;
+            padding: 12px;
+            border-radius: 15px;
+        }
+
+        .download a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* 
+.section2{
+    height: auto;
+    background: linear-gradient(120deg, rgb(127, 127, 128), rgb(197, 197, 196))
+} */
+@media screen and (max-width: 1000px){
+    .btn{
+        width: 40%;
+    }
+}
+        @media screen and (max-width: 500px) {
+            .header {
+                display: flex;
+                justify-content: center;
+            }
+
+            .header .logo {
+                display: none;
+            }
+            .header .nav-btn ul li a{
+                font-size: 1.2rem;
+            }
+
+            .main-resume {
+                font-size: 4rem;
+                margin-top: 50px;
+                margin-left: 100px;
+            }
+
+            .all-btn {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 50%;
+                margin-left: 120px;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media screen and (max-width:380px) {
+            .main-resume {
+                font-size: 4rem;
+                margin-top: 30px;
+                margin-left: 47px;
+            }
+
+            .main-heading {
+                font-size: 3.5rem;
+            }
+
+            .para {
+                font-size: 1.5rem;
+            }
+
+            .btn {
+                width: 50%;
+                margin-left: 100px;
+                margin-bottom: 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="section1">
+            <div class="header">
+                <a href="/">
+                    <div class="logo">Resume</div>
+                </a>
+                <div class="nav-btn">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="https://instagram.com/123divyansuverma">About</a></li>
+                        <li><a href="signup"><span class="acc">Account</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-resume">
+                <h1 class="main-heading">Build Your Resume</h1>
+                <p class="para">This website is get professional Resume.</p>
+            </div>
+            <div class="all-btn">
+                <button class="btn download"><a href="template1">Templates1</a></button>
+                <button class="btn download"><a href="template2">Templates2</a></button>
+            </div>
+        </div>
+        <div class="section2">
+        </div>
+    </div>
+</body>
+
+</html>

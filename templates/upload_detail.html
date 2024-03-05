@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #bdd2d6;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            height: auto;
+        }
+        h2{
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: rgba(0, 0, 255, 0.3); /* Blue transparent background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            padding: 50px 0px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea, input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .submit-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form id="contactForm" method="post">
+            {% csrf_token %}
+            <h2>Personal Informations</h2>
+            <label for="name">First Name:</label>
+            <input type="text" id="f_name" name="f_name" required>
+            <label for="name">Last Name:</label>
+            <input type="text" id="l_name" name="l_name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="email">Github:</label>
+            <input type="url" id="github" name="github_link" required>
+
+            <label for="email">Linkedin:</label>
+            <input type="url" id="email" name="linkedin_link" required>
+
+            <label for="name">Number:</label>
+            <input type="text" id="number" name="number" required>
+            
+            <label for="name">DOB:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="name">About:</label>
+            <textarea name="about" id="" cols="30" rows="10"></textarea>
+            
+            
+            <label for="name">Address:</label>
+            <textarea name="address" id="" cols="30" rows="10"></textarea>
+
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="___">_____</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="gender">Language:</label>
+            <select id="language" name="language" required>
+                <option value="___">_____</option>
+                <option value="Hindi">Hindi</option>
+                <option value="English">English</option>
+                <option value="Bhojpuri">Bhojpuri</option>
+            </select>
+
+            <label for="image">Image:</label>
+            <input type="file" name="image" id="image">
+
+            <h2>Education..</h2>
+            <label for="name">Bachorals Degree:</label>
+            <input type="text" id="bachorals" name="graduation" required>
+
+            <label for="name">Start Date:</label>
+            <input type="date" id="start_grad" name="start_grad" required>
+
+            <label for="name">End Date:</label>
+            <input type="date" id="end_grad" name="end_grad" required>
+
+            <label for="marks">Marks:</label>
+            <input type="text" name="grad_marks" id="grad_mark">
+            
+
+            <label for="name">12th Degree:</label>
+            <input type="text" id="inter" name="inter" required>
+
+            <label for="name">Start Date:</label>
+            <input type="date" id="start_inter" name="start_inter" required>
+            
+            <label for="name">End Date:</label>
+            <input type="date" id="end_inter" name="end_inter" required>
+
+            <label for="marks">Marks:</label>
+            <input type="text" name="inter_marks" id="inter_mark">
+            
+
+            <label for="name">10th Degree:</label>
+            <input type="text" id="tenth" name="tenth" required>
+
+            <label for="name">Start Date:</label>
+            <input type="date" id="start_ten" name="start_ten" required>
+
+            <label for="name">End Date:</label>
+            <input type="date" id="end_ten" name="end_ten" required>
+
+            <label for="marks">Marks:</label>
+            <input type="text" name="ten_marks" id="ten_marks">
+
+            <h2>Work Experience...</h2>
+            <label for="name">Company:</label>
+            <input type="text" id="experience" name="experience" required>
+            <label for="name">Role:</label>
+            <input type="text" id="role" name="ex_job" required>
+            <label for="name">joining Date:</label>
+            <input type="date" id="j_date" name="start_job" required>
+            <label for="name">Endin Date:</label>
+            <input type="date" id="e_date" name="end_job" required>
+
+            <h2>Project</h2>
+            <label for="project">Project Name</label>
+            <input type="text" name="project" id="project" required placeholder="*required">
+            <label for="link">Project Link</label>
+            <input type="url" name="project_link" id="project_link" required placeholder="*required">
+
+            <label for="project">Project Name</label>
+            <input type="text" name="project1" id="project" placeholder="Optional">
+            <label for="link">Project Link</label>
+            <input type="url" name="project_link1" id="project_link1" placeholder="Optional">
+
+            <label for="project">Project Name</label>
+            <input type="text" name="project2" id="project" placeholder="Optional">
+            <label for="link">Project Link</label>
+            <input type="url" name="project_link2" id="project_link" placeholder="Optional">
+
+            <h2>Skills</h2>
+            <label for="skills">Skills (comma-separated):</label>
+            <input type="text" name="skills" id="skills" required>
+
+            <!-- <label for="name">Endin Date:</label>
+            <input type="date" id="e_date" name="e_date" required> -->
+
+            <h2>Hobbies..</h2>
+            <textarea name="hobbies" id="" cols="30" rows="10"></textarea>
+
+            <h2>Achivement</h2>
+            <label for="achivment">Achivement Name</label>
+            <input type="text" name="achievement" id="achivment" required placeholder="*required">
+            <label for="position">Position</label>
+            <select name="position" id="">
+                <option value="">_____</option>
+                <option value="Gold🥇">Gold🥇</option>
+                <option value="Silver🥈">Silver🥈</option>
+                <option value="Brunze🥉">Brunze🥉</option>
+            </select>
+
+            <input type="text" name="achievement1" id="achivment" placeholder="*Optional">
+            <label for="position">Position</label>
+            <select name="position1" id="">
+                <option value="">_____</option>
+                <option value="Gold🥇">Gold🥇</option>
+                <option value="Silver🥈">Silver🥈</option>
+                <option value="Brunze🥉">Brunze🥉</option>
+            </select>
+
+            <input type="text" name="achievement2" id="achivment" placeholder="*Optional">
+            <label for="position">Position</label>
+            <select name="position2" id="">
+                <option value="">_____</option>
+                <option value="Gold🥇">Gold🥇</option>
+                <option value="Silver🥈">Silver🥈</option>
+                <option value="Brunze🥉">Brunze🥉</option>
+            </select>
+
+
+            <input type="submit" class="submit-button" value="Submit">
+        </form>
+    </div>
+
+    <!-- This is not part of Pen -->
+    <a class="me" href="https://codepen.io/uzcho_/pens/popular/?grid_type=list" target="_blank" style="color:#000"></a>
+</body>
+
+</html>
